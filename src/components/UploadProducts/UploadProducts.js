@@ -1,10 +1,11 @@
 import { TextField, Input, Button } from "@mui/material";
 import React, { useState } from "react";
+import "./UploadProducts.css";
 
 const UploadProducts = () => {
+  const [brand, setBrand] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
-  const [rating, setRating] = useState("");
   const [image, setImage] = useState(null);
   const [success, setSuccess] = useState(false);
 
@@ -14,9 +15,9 @@ const UploadProducts = () => {
       return;
     }
     const formData = new FormData();
+    formData.append("brand", brand);
     formData.append("name", name);
     formData.append("price", price);
-    formData.append("rating", rating);
     formData.append("image", image);
     fetch("https://products-manager0.herokuapp.com/products", {
       method: "POST",
@@ -25,7 +26,7 @@ const UploadProducts = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          setSuccess("Products added succesfully")
+          setSuccess("Products added succesfully");
         }
       })
       .catch((error) => {
@@ -34,13 +35,24 @@ const UploadProducts = () => {
   };
 
   return (
-    <div>
+    <div className="product-container">
       <h2 className="py-4">Add a Product</h2>
       <form onSubmit={handleSubmit}>
         <TextField
-          sx={{ width: "50%" }}
+          sx={{ width: "90%" }}
           id="outlined-basic"
-          label="Name"
+          label="Brand Name"
+          variant="outlined"
+          name="brand"
+          required
+          onChange={(e) => setBrand(e.target.value)}
+        />
+        <br />
+        <br />
+        <TextField
+          sx={{ width: "90%" }}
+          id="outlined-basic"
+          label="Phone Name"
           variant="outlined"
           name="name"
           required
@@ -49,7 +61,7 @@ const UploadProducts = () => {
         <br />
         <br />
         <TextField
-          sx={{ width: "50%" }}
+          sx={{ width: "90%" }}
           id="outlined-basic"
           label="Price"
           variant="outlined"
@@ -60,20 +72,8 @@ const UploadProducts = () => {
         />
         <br />
         <br />
-        <TextField
-          sx={{ width: "50%" }}
-          id="outlined-basic"
-          label="Rating"
-          name="rating"
-          variant="outlined"
-          required
-          onChange={(e) => setRating(e.target.value)}
-          type="number"
-        />{" "}
-        <br />
-        <br />
         <Input
-          sx={{ width: "50%" }}
+          sx={{ width: "90%" }}
           accept="image/*"
           name="image"
           type="file"

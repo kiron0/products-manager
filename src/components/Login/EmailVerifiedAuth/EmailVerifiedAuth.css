@@ -1,0 +1,23 @@
+.email-verified {
+  width: 100vw;
+  height: 100vh;
+  margin: 10rem auto;
+  display: block;
+}
+
+.verified-btn {
+  width: 375px;
+  height: 55px;
+  background: #1b4388;
+  background: linear-gradient(25deg, #1b4388 0%, #1e90c2 100%);
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  margin: 2rem auto;
+  font-size: 22px;
+  cursor: pointer;
+}
+.verified-btn:hover {
+  background: #1e90c2;
+  background: linear-gradient(25deg, #1e90c2 0%, #1b4388 100%);
+}

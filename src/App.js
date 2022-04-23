@@ -7,6 +7,9 @@ import NotFound from "./components/NotFound/NotFound";
 import UploadProducts from "./components/UploadProducts/UploadProducts";
 import Products from "./components/Products/Products";
 import SingleProduct from "./components/SingleProduct/SingleProduct";
+import Login from "./components/Login/Login/Login";
+import RequireAuth from "./components/Login/RequireAuth/RequireAuth";
+import Signup from "./components/Login/Signup/Signup";
 
 function App() {
   return (
@@ -17,11 +20,18 @@ function App() {
         <Route path="/home" element={<Home />} /> */}
         <Route
           path="/upload"
-          element={<UploadProducts></UploadProducts>}
+          element={
+            <RequireAuth>
+              <UploadProducts></UploadProducts>
+            </RequireAuth>
+          }
         ></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/" element={<Products></Products>}></Route>
+        <Route path="/products" element={<Products></Products>}></Route>
         <Route path="/product/:id" element={<SingleProduct></SingleProduct>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </div>

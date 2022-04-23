@@ -10,8 +10,8 @@ const Products = () => {
       .then((data) => setProducts(data));
   }, []);
   return (
-    <div>
-      <h2 className="m-4">Our Products: {products.length}</h2>
+    <div className="products-container">
+      <h2 style={{margin: '50px 0'}}>Our Products: {products.length}</h2>
       <div className="products">
         {products.map((product) => (
           <Product key={product._id} product={product}></Product>

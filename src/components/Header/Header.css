@@ -1,0 +1,45 @@
+.navbar {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.link {
+  color: black !important;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.link:hover {
+  color: #1e90c2 !important;
+}
+
+.logout-button {
+  margin: 0 auto;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-weight: 600;
+  width: 50%;
+  color: #fff;
+  border-radius: 0.5rem;
+  background: #1e90c2;
+  background: linear-gradient(25deg, #1e90c2 0%, #1b4388 100%);
+  border: none !important;
+}
+
+@media screen and (max-width: 490px) {
+  .logout-button {
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 776px) {
+  .logout-button {
+    width: 15%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .logout-button {
+    width: 60%;
+  }
+}

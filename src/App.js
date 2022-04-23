@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import About from "./components/About/About";
 import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
 import NotFound from "./components/NotFound/NotFound";
 import UploadProducts from "./components/UploadProducts/UploadProducts";
 import Products from "./components/Products/Products";

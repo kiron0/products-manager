@@ -1,0 +1,33 @@
+.product {
+  background: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  margin: 0 auto;
+  min-height: 300px;
+}
+
+.product img {
+  width: 60%;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.details-btn {
+  width: 115px;
+  height: 45px;
+  background: #1b4388;
+  background: linear-gradient(25deg, #1b4388 0%, #1e90c2 100%);
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  margin: 0 auto;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  background: #1e90c2;
+  background: linear-gradient(25deg, #1e90c2 0%, #1b4388 100%);
+}

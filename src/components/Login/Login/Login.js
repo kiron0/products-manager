@@ -6,7 +6,7 @@ import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { auth } from "../../../Firebase/Firebase.init";
 import Loading from "../../Loading/Loading";
 
@@ -105,7 +105,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <ToastContainer></ToastContainer>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { TextField, Input, Button } from "@mui/material";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import "./UploadProducts.css";
 
 const UploadProducts = () => {
@@ -7,7 +8,6 @@ const UploadProducts = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
-  const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const UploadProducts = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          setSuccess("Products added succesfully");
+          toast("Products added succesfully");
         }
       })
       .catch((error) => {
@@ -85,7 +85,6 @@ const UploadProducts = () => {
           Add Product
         </Button>
       </form>
-      <span className="text-success mt-4">{success}</span>
     </div>
   );
 };
